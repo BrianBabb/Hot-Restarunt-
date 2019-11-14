@@ -17,9 +17,9 @@
       <h1>Hot Restaurant</h1>
       <h3>Make your reservation</h3>
       <hr>
-      <a href="/"><button class="btn btn-primary btn-lg"><span class="fa fa-eye"></span> View Tables</button></a>
+      <a href="./waitinglist.html"><button class="btn btn-primary btn-lg"><span class="fa fa-eye"></span> View Tables</button></a>
 
-      <a href="/"><button class="btn btn-danger btn-lg"><span class="fa fa-eye"></span> Home </button></a>
+      <a href="./index.html"><button class="btn btn-danger btn-lg"><span class="fa fa-eye"></span> Home </button></a>
     </div>
     <div class="row">
 
@@ -38,18 +38,18 @@
               </div>
 
               <div class="form-group">
-                <label for="role">Phone Number</label>
-                <input type="text" class="form-control" id="role">
+                <label for="phone">Phone Number</label>
+                <input type="text" class="form-control" id="phone">
               </div>
 
               <div class="form-group">
-                <label for="age">Email</label>
-                <input type="text" class="form-control" id="age">
+                <label for="email">Email</label>
+                <input type="text" class="form-control" id="email">
               </div>
 
               <div class="form-group">
-                <label for="force-points">Unique ID</label>
-                <input type="text" class="form-control" id="force-points">
+                <label for="uniqueId">Unique ID</label>
+                <input type="text" class="form-control" id="uniqueId">
               </div>
 
             </form>
@@ -68,19 +68,22 @@
     // Question: What does this code do?
     $("#add-btn").on("click", function(event) {
       event.preventDefault();
-      var newCharacter = {
+      var updateForm = {
         name: $("#name").val().trim(),
-        role: $("#role").val().trim(),
-        age: $("#age").val().trim(),
-        forcePoints: $("#force-points").val().trim()
+        phone: $("#phone").val().trim(),
+        email: $("#email").val().trim(),
+        uniqueId: $("#uniqueId").val().trim()
       };
 
       // Question: What does this code do??
-      $.post("/api/characters", newCharacter)
+      $.post("/api/reservations", updateForm)
         .then(function(data) {
           console.log("add.html", data);
-          alert("Adding character...");
+          alert("Updating form...");
         });
+
+
+        
     });
   </script>
 
