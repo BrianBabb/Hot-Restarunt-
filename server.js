@@ -38,17 +38,17 @@ app.use(express.json());
 
 // home page - Basic route that sends the user first to the AJAX Page
 app.get("/", function (req, res) {
-    res.sendFile(path.join(__dirname, "home.html"));
+    res.sendFile(path.join(__dirname, "index.html"));
 });
 
 //http://hot-restaurant.herokuapp.com/tables
 app.get("/table", function (req, res) {
-    res.sendFile(path.join(__dirname, "table.html"));
+    res.sendFile(path.join(__dirname, "waitinglist.html"));
 });
 
 //http://hot-restaurant.herokuapp.com/reserve
 app.get("/reserve", function (req, res) {
-    res.sendFile(path.join(__dirname, "reserve.html"));
+    res.sendFile(path.join(__dirname, "form.html"));
 });
 
 
