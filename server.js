@@ -14,7 +14,7 @@ var connection = mysql.createConnection({
   // Your username
   user: "root",
 
-  // Your password
+  // Put YOUR password
   password: "",
   database: "reservations_DB"
 });
