@@ -8,17 +8,18 @@ CREATE TABLE reservations (
   id INT NOT NULL AUTO_INCREMENT,
   maindiner VARCHAR(45) NULL,
   cell VARCHAR(10) NULL,
+  email VARCHAR(100) NULL,
   diners INT NULL,
   PRIMARY KEY (id)
 );
 
-INSERT INTO reservations (maindiner, cell, diners)
+INSERT INTO reservations (maindiner, cell, email, diners)
 VALUES ("Hal", 5555559000, 5);
 
-INSERT INTO reservations (maindiner, cell, diners)
+INSERT INTO reservations (maindiner, cell, email, diners)
 VALUES ("Eli", 7777777777, 4);
 
-INSERT INTO reservations (maindiner, cell, diners)
+INSERT INTO reservations (maindiner, cell, email, diners)
 VALUES ("Boss", 8888888888, 2);
 
 -- ### Alternative way to insert more than one row
