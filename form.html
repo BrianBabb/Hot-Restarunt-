@@ -38,18 +38,18 @@
               </div>
 
               <div class="form-group">
-                <label for="role">Phone Number</label>
-                <input type="text" class="form-control" id="role">
+                <label for="phone">Phone Number</label>
+                <input type="text" class="form-control" id="phone">
               </div>
 
               <div class="form-group">
-                <label for="age">Email</label>
-                <input type="text" class="form-control" id="age">
+                <label for="email">Email</label>
+                <input type="text" class="form-control" id="email">
               </div>
 
               <div class="form-group">
-                <label for="force-points">Unique ID</label>
-                <input type="text" class="form-control" id="force-points">
+                <label for="uniqueId">Unique ID</label>
+                <input type="text" class="form-control" id="uniqueId">
               </div>
 
             </form>
@@ -68,19 +68,22 @@
     // Question: What does this code do?
     $("#add-btn").on("click", function(event) {
       event.preventDefault();
-      var newCharacter = {
+      var updateForm = {
         name: $("#name").val().trim(),
-        role: $("#role").val().trim(),
-        age: $("#age").val().trim(),
-        forcePoints: $("#force-points").val().trim()
+        phone: $("#phone").val().trim(),
+        email: $("#email").val().trim(),
+        uniqueId: $("#uniqueId").val().trim()
       };
 
       // Question: What does this code do??
-      $.post("/api/characters", newCharacter)
+      $.post("/api/characters", updateForm)
         .then(function(data) {
           console.log("add.html", data);
-          alert("Adding character...");
+          alert("Updating form...");
         });
+
+
+        
     });
   </script>
 
