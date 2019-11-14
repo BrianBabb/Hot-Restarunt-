@@ -15,7 +15,7 @@ var connection = mysql.createConnection({
   user: "root",
 
   // Put YOUR password
-  password: "",
+  password: "-8Rbc12?",
   database: "reservations_DB"
 });
 
@@ -40,18 +40,21 @@ var reservations = [
     id: "1",
     maindiner: "Yoda",
     cell: 8888888888,
+    email: "abc@phony.com",
     diners: 2
   },
   {
-    id: "2",
-    maindiner: "Daniel",
+    id: "1",
+    maindiner: "Yoda",
     cell: 8888888888,
-    diners: 4
-  },
+    email: "abc@phony.com",
+    diners: 2 
+   },
   {
     id: "3",
     maindiner: "Marie",
     cell: 8888888888,
+    email: "abc@phony.com",
     diners: 6
   }
 ];
