@@ -12,6 +12,30 @@ var PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+// Reservation (DATA)
+// =============================================================
+var reservations = [
+  {
+    id: "1",
+    maindiner: "Yoda",
+    cell: 8888888888,
+    diners: 2
+  },
+  {
+    id: "2",
+    maindiner: "Daniel",
+    cell: 8888888888,
+    diners: 4
+  },
+  {
+    id: "3",
+    maindiner: "Marie",
+    cell: 8888888888,
+    diners: 6
+  }
+];
+
+
 // Routes
 // =============================================================
 
@@ -28,6 +52,39 @@ app.get("/table", function (req, res) {
 //http://hot-restaurant.herokuapp.com/reserve
 app.get("/reserve", function (req, res) {
     res.sendFile(path.join(__dirname, "form.html"));
+});
+
+// Displays all reservations
+app.get("/api/reservations", function(req, res) {
+  return res.json(reservations);
+});
+
+// Displays a single character, or returns false
+app.get("/api/reservations/:reservations", function(req, res) {
+  var recorded = req.params.reservation;
+
+  console.log(chosen);
+
+  for (var i = 0; i < reservations.length; i++) {
+    if (chosen === reservations[i].routeName) {
+      return res.json(reservations[i]);
+    }
+  }
+
+  return res.json(false);
+});
+
+// Create New Reservation - takes in JSON input
+app.post("/api/reservations", function(req, res) {
+  // req.body hosts is equal to the JSON post sent from the user
+  // This works because of our body parsing middleware
+  var newReservations = req.body;
+
+  console.log(newReservations);
+
+  reservations.push(newReservations);
+
+  res.json(newReservations);
 });
 
 
