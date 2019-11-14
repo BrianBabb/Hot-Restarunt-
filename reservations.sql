@@ -14,14 +14,10 @@ CREATE TABLE reservations (
 );
 
 INSERT INTO reservations (maindiner, cell, email, diners)
-VALUES ("Hal", 5555559000, 5);
+VALUES ("Hal", "5555559000", "nobody@otacon.com", 5);
 
 INSERT INTO reservations (maindiner, cell, email, diners)
-VALUES ("Eli", 7777777777, 4);
+VALUES ("Eli", "7777777777", "liquid@random.com", 4);
 
 INSERT INTO reservations (maindiner, cell, email, diners)
-VALUES ("Boss", 8888888888, 2);
-
--- ### Alternative way to insert more than one row
--- INSERT INTO products (flavor, price, quantity)
--- VALUES ("vanilla", 2.50, 100), ("chocolate", 3.10, 120), ("strawberry", 3.25, 75);
+VALUES ("Boss", "8888888888", "bigboss@patriot.com", 2);
